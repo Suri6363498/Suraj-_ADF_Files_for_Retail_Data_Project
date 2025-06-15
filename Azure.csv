@@ -1,0 +1,13 @@
+﻿NAME,TYPE,LOCATION,RESOURCE GROUP,SUBSCRIPTION,LAST ACCESSED
+"adf-b14-dev","Data factory (V2)","East US","rg-ade-b13","Azure subscription 1","6 days ago"
+"adf-suri1-dev","Data factory (V2)","East US","rg_ade_suri1","Azure subscription 1","18 hours ago"
+"adlsb14gen2","Storage account","East US","rg-ade-b13","Azure subscription 1","16 days ago"
+"adlssurigen2","Storage account","","rg_ade_s1","Azure subscription 1","1 day ago"
+"Azure subscription 1","Subscription","","","Azure subscription 1","17 days ago"
+"blobstorageb12dev","Storage account","East US","rg-ade-b13","Azure subscription 1","16 days ago"
+"blobstoragesuri1dev","Storage account","","rg_ade_suri1","Azure subscription 1","1 day ago"
+"rg_ade_s1","Resource group","East US","rg_ade_s1","Azure subscription 1","6 days ago"
+"rg_ade_suri1","Resource group","East US","rg_ade_suri1","Azure subscription 1","1 day ago"
+"rg-ade-b13","Resource group","East US","rg-ade-b13","Azure subscription 1","17 days ago"
+"sqldbdev","SQL database","West US 2","rg_ade_suri1","Azure subscription 1","20 hours ago"
+"sqlserversuri1dev","SQL server","West US 2","rg_ade_suri1","Azure subscription 1","20 hours ago"
