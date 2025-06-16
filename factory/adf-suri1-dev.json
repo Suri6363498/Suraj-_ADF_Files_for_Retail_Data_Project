@@ -1,0 +1,9 @@
+{
+	"name": "adf-suri1-dev",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dd5b069d-0073-4cac-a9ae-4acb4479e352",
+		"tenantId": "2cb6ae7d-d865-4cab-8038-26f73f2caf4a"
+	}
+}
