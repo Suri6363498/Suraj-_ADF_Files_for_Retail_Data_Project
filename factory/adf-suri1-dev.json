@@ -1,5 +1,13 @@
 {
 	"name": "adf-suri1-dev",
+	"properties": {
+		"globalParameters": {
+			"container": {
+				"type": "string",
+				"value": "adlsgen2container "
+			}
+		}
+	},
 	"location": "eastus",
 	"identity": {
 		"type": "SystemAssigned",
