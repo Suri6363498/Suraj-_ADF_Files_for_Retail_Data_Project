@@ -4,7 +4,7 @@
 		"globalParameters": {
 			"container": {
 				"type": "string",
-				"value": "adlsgen2"
+				"value": "adlsgen2container"
 			},
 			"filePath": {
 				"type": "string",
