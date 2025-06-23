@@ -1,0 +1,52 @@
+{
+	"name": "ds_source_getmetadata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_source",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "source",
+				"fileSystem": "adlsgen2container"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "City_ID",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "doctor_availability_rate",
+				"type": "String"
+			},
+			{
+				"name": "hospital_availability_rate",
+				"type": "String"
+			},
+			{
+				"name": "annual_per_capita",
+				"type": "String"
+			},
+			{
+				"name": "population_density",
+				"type": "String"
+			},
+			{
+				"name": "death_rate",
+				"type": "String"
+			}
+		]
+	}
+}
