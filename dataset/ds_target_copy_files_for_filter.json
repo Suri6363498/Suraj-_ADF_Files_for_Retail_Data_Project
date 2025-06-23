@@ -1,0 +1,32 @@
+{
+	"name": "ds_target_copy_files_for_filter",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls_source",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"TargetFile_Name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().TargetFile_Name",
+					"type": "Expression"
+				},
+				"folderPath": "target/appendvariables",
+				"fileSystem": "adlsgen2container"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
