@@ -1305,6 +1305,79 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/pl_ifCondition')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "If Condition1",
+						"type": "IfCondition",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"expression": {
+								"value": "@contains(pipeline().parameters.input, 'tables')",
+								"type": "Expression"
+							},
+							"ifFalseActivities": [
+								{
+									"name": "FalseCacetable",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "pl_setvariable",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {}
+									}
+								}
+							],
+							"ifTrueActivities": [
+								{
+									"name": "TrueCaseTable",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "pl_lookup",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {}
+									}
+								}
+							]
+						}
+					}
+				],
+				"policy": {
+					"elapsedTimeMetric": {}
+				},
+				"parameters": {
+					"input": {
+						"type": "string",
+						"defaultValue": "files"
+					}
+				},
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_setvariable')]",
+				"[concat(variables('factoryId'), '/pipelines/pl_lookup')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/pl_lookup')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
