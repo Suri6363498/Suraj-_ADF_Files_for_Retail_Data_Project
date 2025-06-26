@@ -650,85 +650,68 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_source_copy_sql_table_for_ForEach')]",
+			"name": "[concat(parameters('factoryName'), '/ds_source_copy_getmetadata2_latest_files')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "ls_source_sql",
+					"referenceName": "ls_adls_source",
 					"type": "LinkedServiceReference"
 				},
 				"parameters": {
-					"SchemaName": {
-						"type": "string"
-					},
-					"TableName": {
+					"Filename": {
 						"type": "string"
 					}
 				},
 				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
+				"type": "DelimitedText",
 				"typeProperties": {
-					"schema": {
-						"value": "@dataset().SchemaName",
-						"type": "Expression"
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@dataset().Filename",
+							"type": "Expression"
+						},
+						"folderPath": "source",
+						"fileSystem": "adlsgen2container"
 					},
-					"table": {
-						"value": "@dataset().TableName",
-						"type": "Expression"
-					}
-				}
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": false,
+					"quoteChar": "\""
+				},
+				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ls_source_sql')]"
+				"[concat(variables('factoryId'), '/linkedServices/ls_adls_source')]"
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_source_copy_sqltable')]",
+			"name": "[concat(parameters('factoryName'), '/ds_source_copy_getmetadata_latest_files')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"linkedServiceName": {
-					"referenceName": "ls_source_sql",
+					"referenceName": "ls_adls_source",
 					"type": "LinkedServiceReference"
 				},
 				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [
-					{
-						"name": "id",
-						"type": "int",
-						"precision": 10
-					},
-					{
-						"name": "name",
-						"type": "nvarchar"
-					},
-					{
-						"name": "dep",
-						"type": "nvarchar"
-					},
-					{
-						"name": "salary",
-						"type": "decimal",
-						"precision": 10,
-						"scale": 2
-					},
-					{
-						"name": "last_updated",
-						"type": "datetime",
-						"precision": 23,
-						"scale": 3
-					}
-				],
+				"type": "DelimitedText",
 				"typeProperties": {
-					"schema": "dbo",
-					"table": "emp"
-				}
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "source",
+						"fileSystem": "adlsgen2container"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": false,
+					"quoteChar": "\""
+				},
+				"schema": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/ls_source_sql')]"
+				"[concat(variables('factoryId'), '/linkedServices/ls_adls_source')]"
 			]
 		}
 	]
