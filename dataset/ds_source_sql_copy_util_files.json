@@ -1,0 +1,16 @@
+{
+	"name": "ds_source_sql_copy_util_files",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_source_sql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "mastertable"
+		}
+	}
+}
