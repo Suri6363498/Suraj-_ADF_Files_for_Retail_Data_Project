@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "WebActivityoutput.json",
-				"folderPath": "target/WebActivity",
+				"folderPath": "target/WebActivitynew",
 				"fileSystem": "adlsgen2container"
 			},
 			"columnDelimiter": ",",
